@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "162792831875",
+    "firebase_url": "https://mealwheel-5c43d.firebaseio.com",
+    "project_id": "mealwheel-5c43d",
+    "storage_bucket": "mealwheel-5c43d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:162792831875:android:efe2380690621b0e",
+        "android_client_info": {
+          "package_name": "com.example.austin.mealwheel_490"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "162792831875-6o4ebn5qdr3ilie9llmjhdfukd7ptik6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.austin.mealwheel_490",
+            "certificate_hash": "DE11F4297E94FB7D7520CC9EEC549AF3F4CFDC5F"
+          }
+        },
+        {
+          "client_id": "162792831875-odr55ijqnm0rrfmha8knsbl57ctll9ll.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCm3FtPXJYFJ2mGNDcsEQRV-UAmBc23eag"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "162792831875-odr55ijqnm0rrfmha8knsbl57ctll9ll.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
