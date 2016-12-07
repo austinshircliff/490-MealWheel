@@ -34,9 +34,9 @@ public class FacebookLogin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.facebook_login);
 
-        FacebookSdk.sdkInitialize(getApplicationContext());
         callbackManager = CallbackManager.Factory.create();
         loginButton = (LoginButton) findViewById(R.id.login_button);
         loginButton.setReadPermissions("user_friends");
