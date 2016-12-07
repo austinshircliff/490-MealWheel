@@ -18,12 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
         <activity android:name=".HomePage"
             android:label="Meal Wheel">
 
         </activity>
-=======
+
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges=
@@ -35,7 +34,7 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
->>>>>>> 219a8f5721fe3e6133c2c41cb20b12d027b8c76c
+
     </application>
 
 </manifest>
