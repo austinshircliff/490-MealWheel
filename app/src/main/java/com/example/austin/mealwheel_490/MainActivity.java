@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private void gotoHome()
     {
-        Intent intent = new Intent(this, HomeScreen.class);
+        Intent intent = new Intent(this, HomePage.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
 
