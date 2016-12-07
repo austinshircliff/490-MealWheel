@@ -25,12 +25,13 @@ public class HomePage extends AppCompatActivity {
                 FacebookSdk.sdkInitialize(getApplicationContext());
                 LoginManager.getInstance().logOut();
                 restart();
-
-
             }
         });
 
+
     }
+
+
     public void restart()
     {
         Intent intent = new Intent(this, FacebookLogin.class);
