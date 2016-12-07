@@ -60,6 +60,7 @@ public class FacebookLogin extends AppCompatActivity {
             public void onSuccess(LoginResult loginResult) {
 
                 handleFacebookToken(loginResult.getAccessToken());
+                goMain();
             }
 
             @Override

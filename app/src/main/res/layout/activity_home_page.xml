@@ -48,5 +48,15 @@
         android:id="@+id/managechoicesbutton"
         android:layout_alignStart="@+id/previouschoicesbutton" />
 
+    <Button
+        android:text="Logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="11dp"
+        android:id="@+id/logout" />
+
 
 </RelativeLayout>

@@ -11,7 +11,7 @@ import com.facebook.FacebookSdk;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button logoutbtn = (Button) findViewById(R.id.logout);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,14 +21,18 @@ public class MainActivity extends AppCompatActivity {
 
 
         if (AccessToken.getCurrentAccessToken() == null) {
-            goToLogin();
+
             Toast.makeText(this, "You are Not Currently Logged In", Toast.LENGTH_SHORT).show();
+            goToLogin();
 
         } else if (AccessToken.getCurrentAccessToken() != null)
         {
             Toast.makeText(this,"You are logged in" ,Toast.LENGTH_LONG).show();
 
         }
+
+        Button logoutbtn = (Button) findViewById(R.id.logout);
+        gotoHome();
 
     }
 
@@ -41,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    private void gotoHome()
+    public void gotoHome()
     {
         Intent intent = new Intent(this, HomePage.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
