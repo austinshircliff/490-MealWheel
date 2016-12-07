@@ -30,8 +30,8 @@ public class FacebookLogin extends AppCompatActivity {
 
     private LoginButton loginButton;
     private CallbackManager callbackManager;
-    private FirebaseAuth firebaseAuth;
-    private FirebaseAuth.AuthStateListener firebaseAuthListener;
+    public FirebaseAuth firebaseAuth;
+    public FirebaseAuth.AuthStateListener firebaseAuthListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

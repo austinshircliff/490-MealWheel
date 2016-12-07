@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         } else if (AccessToken.getCurrentAccessToken() != null)
         {
-            Toast.makeText(this,"You are logged in as" ,Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"You are logged in" ,Toast.LENGTH_LONG).show();
 
         }
 
@@ -38,6 +38,13 @@ public class MainActivity extends AppCompatActivity {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
 
+
+    }
+    private void gotoHome()
+    {
+        Intent intent = new Intent(this, HomeScreen.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
 
     }
 
