@@ -3,6 +3,7 @@ package com.example.austin.mealwheel_490;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.facebook.AccessToken;
@@ -10,7 +11,7 @@ import com.facebook.FacebookSdk;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    Button logoutbtn = (Button) findViewById(R.id.logout);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, HomePage.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
+        Toast.makeText(this, "Test Toast", Toast.LENGTH_SHORT).show();
 
     }
 

@@ -28,8 +28,8 @@ import java.util.Arrays;
 
 public class FacebookLogin extends AppCompatActivity {
 
-    private LoginButton loginButton;
-    private CallbackManager callbackManager;
+    public LoginButton loginButton;
+    public CallbackManager callbackManager;
     public FirebaseAuth firebaseAuth;
     public FirebaseAuth.AuthStateListener firebaseAuthListener;
 
@@ -89,7 +89,7 @@ public class FacebookLogin extends AppCompatActivity {
     }
 
     private void goMain(){
-        Intent intent = new Intent(this,HomeScreen.class);
+        Intent intent = new Intent(this,HomePage.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
