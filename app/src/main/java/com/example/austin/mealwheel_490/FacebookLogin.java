@@ -1,9 +1,11 @@
 package com.example.austin.mealwheel_490;
 
 import android.content.Intent;
+import android.nfc.Tag;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.facebook.AccessToken;
@@ -39,7 +41,19 @@ public class FacebookLogin extends AppCompatActivity {
 
         callbackManager = CallbackManager.Factory.create();
         loginButton = (LoginButton) findViewById(R.id.login_button);
-        loginButton.setReadPermissions("user_friends");
+        loginButton.setReadPermissions("email","user_friends","public_profile");
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if(user != null ){
+                    Toast.makeText(FacebookLogin.this, "Welcome to Meal Wheel", Toast.LENGTH_SHORT).show();
+                    goMain();
+                }
+            }
+        };//closes firebaseAuthListener
 
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
@@ -59,19 +73,6 @@ public class FacebookLogin extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"Login Failed",Toast.LENGTH_LONG).show();
             }
         });
-
-
-        firebaseAuth = FirebaseAuth.getInstance();
-        firebaseAuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if(user != null ){
-                   //go to home screen
-
-                }
-            }
-        };//closes firebaseAuthListener
     }
 
     private void handleFacebookToken(AccessToken accessToken)
@@ -88,7 +89,7 @@ public class FacebookLogin extends AppCompatActivity {
     }
 
     private void goMain(){
-        Intent intent = new Intent(this,MainActivity.class);
+        Intent intent = new Intent(this,HomeScreen.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }

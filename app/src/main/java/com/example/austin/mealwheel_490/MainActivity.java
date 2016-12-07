@@ -3,6 +3,7 @@ package com.example.austin.mealwheel_490;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.facebook.AccessToken;
 import com.facebook.FacebookSdk;
@@ -15,12 +16,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
-        setContentView(R.layout.facebook_login);
+        setContentView(R.layout.activity_main);
 
 
-      if(AccessToken.getCurrentAccessToken() == null) {
+        if (AccessToken.getCurrentAccessToken() == null) {
             goToLogin();
+            Toast.makeText(this, "You are Not Currently Logged In", Toast.LENGTH_SHORT).show();
+
+        } else if (AccessToken.getCurrentAccessToken() != null)
+        {
+            Toast.makeText(this,"You are logged in as" ,Toast.LENGTH_LONG).show();
+
         }
+
     }
 
 

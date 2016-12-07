@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MealWheel-490</string>
     <string name="facebook_app_id">103026730192325</string>
+    <string name="title_activity_home_screen">HomeScreen</string>
 </resources>
