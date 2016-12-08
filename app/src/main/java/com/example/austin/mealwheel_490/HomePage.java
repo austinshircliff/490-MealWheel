@@ -19,18 +19,18 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.restaurant_selection_list_frag);
 
-//
-//        Button logoutBtn = (Button) findViewById(R.id.logout);
-//
-//        logoutBtn.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//
-//                FacebookSdk.sdkInitialize(getApplicationContext());
-//                LoginManager.getInstance().logOut();
-//                restart();
-//
-//            }
-//        });
+
+        Button logoutBtn = (Button) findViewById(R.id.logout);
+
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                FacebookSdk.sdkInitialize(getApplicationContext());
+                LoginManager.getInstance().logOut();
+                restart();
+
+            }
+        });
     }
 
     public void restart()
@@ -39,6 +39,10 @@ public class HomePage extends AppCompatActivity {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
         Toast.makeText(this, "Logged Out", Toast.LENGTH_SHORT).show();
+
+
+
+
 
     }
 }

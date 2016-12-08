@@ -32,7 +32,7 @@ public class RestaurantSelectionList extends Fragment {
     List<String>listofrest = new ArrayList<String>();
     ListView restaurantListView;
     ListAdapter restaurantListAdapter;
-    
+
 
     public RestaurantSelectionList(){}
 
