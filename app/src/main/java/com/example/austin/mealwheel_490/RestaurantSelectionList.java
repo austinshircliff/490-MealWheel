@@ -2,13 +2,16 @@ package com.example.austin.mealwheel_490;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.database.DatabaseReference;
@@ -23,34 +26,40 @@ import java.util.List;
  */
 public class RestaurantSelectionList extends Fragment {
 
+    DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference mRestReference = mRootRef.child("restaurants");
 
-    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://mealwheel-5c43d.firebaseio.com/restaurants");
-    DatabaseReference restReference = databaseReference.child("https://mealwheel-5c43d.firebaseio.com/restaurants");
-    List<String> listofrest = new ArrayList<String>();
+    List<String>listofrest = new ArrayList<String>();
     ListView restaurantListView;
     ListAdapter restaurantListAdapter;
+    
 
-    public RestaurantSelectionList() {
-        // Required empty public constructor
-    }
-
+    public RestaurantSelectionList(){}
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.restaurant_selection_list_frag, container, false);
+    public View onCreateView(LayoutInflater inflater,  ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.restaurant_selection_list_frag,container,false);
         restaurantListView = (ListView) view.findViewById(R.id.restaurantListView);
-        restaurantListAdapter = new FirebaseListAdapter<Restaurants>(getActivity(), Restaurants.class, R.layout.individual_restaurant_name, databaseReference) {
+        restaurantListAdapter = new FirebaseListAdapter<Restaurants>(getActivity(),Restaurants.class,R.layout.individual_restaurant_name,mRestReference) {
             @Override
             protected void populateView(View v, Restaurants model, int position) {
-                TextView restaurantName = (TextView) v.findViewById(R.id.restname);
-                restaurantName.setText(model.getRestaurant());
+                TextView restName = (TextView) v.findViewById(R.id.restname);
+                restName.setText(model.getRestaurant());
 
-                listofrest.add(position, model.getRestaurant());
+                listofrest.add(position,model.getRestaurant());
             }
         };
+
         restaurantListView.setAdapter(restaurantListAdapter);
+
+        restaurantListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(getActivity(), "test", Toast.LENGTH_SHORT).show();
+            }
+        });
         return view;
     }
+
 }
