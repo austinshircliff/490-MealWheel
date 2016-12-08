@@ -17,7 +17,8 @@ public class HomePage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.restaurant_selection_list_frag);
+        setContentView(R.layout.activity_home_page);
+
 
 
         Button logoutBtn = (Button) findViewById(R.id.logout);
@@ -31,6 +32,16 @@ public class HomePage extends AppCompatActivity {
 
             }
         });
+
+        Button manageChoices = (Button)findViewById(R.id.managechoicesbutton);
+        manageChoices.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomePage.this,RestaurantActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     public void restart()
