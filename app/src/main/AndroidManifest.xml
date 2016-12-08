@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HomePage"
+            android:name=".HomeActivity"
             android:label="Meal Wheel"></activity>
         <activity
             android:name="com.facebook.FacebookActivity"

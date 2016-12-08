@@ -1,8 +1,6 @@
 package com.example.austin.mealwheel_490;
 
 import android.content.Intent;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +10,7 @@ import android.widget.Toast;
 import com.facebook.FacebookSdk;
 import com.facebook.login.LoginManager;
 
-public class HomePage extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +35,7 @@ public class HomePage extends AppCompatActivity {
         manageChoices.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomePage.this,RestaurantActivity.class);
+                Intent intent = new Intent(HomeActivity.this,RestaurantActivity.class);
                 startActivity(intent);
             }
         });

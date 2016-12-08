@@ -18,6 +18,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -44,12 +45,17 @@ public class RestaurantSelectionList extends Fragment {
             @Override
             protected void populateView(View v, Restaurants model, int position) {
                 TextView restName = (TextView) v.findViewById(R.id.restname);
-                restName.setText(model.getRestaurant());
+                restName.setText(model.getName());
 
-                listofrest.add(position,model.getRestaurant());
+
+                listofrest.add(position,model.getName());
+
             }
         };
 
+
+
+        Collections.sort(listofrest);
         restaurantListView.setAdapter(restaurantListAdapter);
 
         restaurantListView.setOnItemClickListener(new AdapterView.OnItemClickListener()

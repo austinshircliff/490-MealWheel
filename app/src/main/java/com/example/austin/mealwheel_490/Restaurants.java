@@ -5,26 +5,23 @@ package com.example.austin.mealwheel_490;
  */
 
 public class Restaurants {
-    private String restaurantName;
+    private String name;
 
     public Restaurants(){}
 
-    public Restaurants(String restaurantName)
+    public void setName(String name)
     {
-        this.restaurantName = restaurantName;
+        this.name = name;
     }
 
-    public String getRestaurant()
+    public String getName()
     {
-        return restaurantName;
+        return name;
     }
-    public void setRestaurant(String restaurantName)
-    {
-        this.restaurantName = restaurantName;
-    }
+
     @Override
     public String toString() {
         return "Restaurants" +
-        "name" + restaurantName;
+                "name" + name;
     }
 }
