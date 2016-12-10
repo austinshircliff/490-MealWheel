@@ -20,7 +20,6 @@ public class HomeActivity extends AppCompatActivity {
 
 
         Button logoutBtn = (Button) findViewById(R.id.logout);
-
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
@@ -31,11 +30,36 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        Button manageChoices = (Button)findViewById(R.id.managechoicesbutton);
-        manageChoices.setOnClickListener(new View.OnClickListener() {
+        Button playbtn = (Button)findViewById(R.id.playbutton);
+        playbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this,RestaurantActivity.class);
+                Intent intent = new Intent(HomeActivity.this,RestaurantSelectionActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button addBtn = (Button)findViewById(R.id.addchoicesbutton);
+        addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,AddRestaurantActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button pastchoicesBtn = (Button) findViewById(R.id.previouschoicesbutton);
+        pastchoicesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,RestaurantSelectionActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button deletechoiceBtn = (Button) findViewById(R.id.deletebutton);
+        deletechoiceBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,DeleteChoiceActivity.class);
                 startActivity(intent);
             }
         });

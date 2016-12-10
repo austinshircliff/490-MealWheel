@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, HomeActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
-        Toast.makeText(this, "Test Toast", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Welcome to Meal Wheel!", Toast.LENGTH_SHORT).show();
 
     }
 

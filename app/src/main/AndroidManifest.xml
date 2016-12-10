@@ -19,7 +19,7 @@
         </activity>
         <activity
             android:name=".HomeActivity"
-            android:label="Meal Wheel"></activity>
+            android:label="Meal Wheel" />
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
@@ -33,9 +33,11 @@
             android:value="@string/facebook_app_id" />
 
         <activity
-            android:name=".RestaurantActivity"
+            android:name=".RestaurantSelectionActivity"
             android:label="@string/title_activity_restaurant"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AddRestaurantActivity" />
+        <activity android:name=".DeleteChoiceActivity"></activity>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.austin.mealwheel_490;
+package com.example.austin.mealwheel_490.model;
 
 /**
  * Created by austin on 12/7/16.

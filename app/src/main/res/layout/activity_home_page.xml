@@ -39,13 +39,23 @@
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:text="Manage Choices"
+        android:text="Add Choices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/previouschoicesbutton"
         android:layout_alignEnd="@+id/previouschoicesbutton"
         android:layout_marginTop="17dp"
-        android:id="@+id/managechoicesbutton"
+        android:id="@+id/addchoicesbutton"
+        android:layout_alignStart="@+id/previouschoicesbutton" />
+
+    <Button
+        android:text="Delete Choices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addchoicesbutton"
+        android:layout_alignEnd="@+id/previouschoicesbutton"
+        android:layout_marginTop="17dp"
+        android:id="@+id/deletebutton"
         android:layout_alignStart="@+id/previouschoicesbutton" />
 
     <Button

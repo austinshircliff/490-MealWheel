@@ -1,0 +1,33 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="200dp"
+    android:layout_height="200dp"
+    tools:context="com.example.austin.mealwheel_490.DeleteChoiceListFragment">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/deletetextview"
+        android:text="Delete?"
+        android:textSize="30dp"
+        android:layout_centerHorizontal="true"
+        android:padding="20dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:id="@+id/deletechoiceBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/deletetextview"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:id="@+id/homeBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/deletechoiceBtn"/>
+
+
+</RelativeLayout>
