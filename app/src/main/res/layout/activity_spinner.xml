@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_spinner"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.austin.mealwheel_490.SpinnerActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/spinnerimage"/>
+
+    <TextView
+        android:text="Option 1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="131dp"
+        android:textColor="#ffffff"
+        android:id="@+id/option1textView"/>
+
+    <TextView
+        android:text="Option 2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/option1textView"
+        android:layout_toEndOf="@+id/option1textView"
+        android:layout_marginStart="60dp"
+        android:textColor="#ffffff"
+        android:id="@+id/option2textView"/>
+
+    <TextView
+        android:text="Option 3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/option2textView"
+        android:layout_toEndOf="@+id/option2textView"
+        android:textColor="#ffffff"
+        android:layout_marginTop="72dp"
+        android:id="@+id/option3textView" />
+
+
+    <TextView
+        android:text="Option 4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/option3textView"
+        android:layout_alignStart="@+id/option2textView"
+        android:layout_marginTop="67dp"
+        android:textColor="#ffffff"
+        android:id="@+id/option4textView"/>
+
+    <TextView
+        android:text="Option 5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/option4textView"
+        android:layout_alignStart="@+id/option1textView"
+        android:textColor="#ffffff"
+        android:id="@+id/option5textView"/>
+
+    <TextView
+        android:text="Option 6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/option4textView"
+        android:layout_toStartOf="@+id/option5textView"
+        android:textColor="#ffffff"
+        android:id="@+id/option6textView"/>
+
+    <Button
+        android:text="Spin!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/spinButton" />
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="90dp"
+        android:src="@drawable/arrow"
+        android:id="@+id/arrowimage"
+        android:layout_marginBottom="32dp"
+        android:layout_above="@+id/option5textView"
+        android:layout_alignStart="@+id/spinButton" />
+
+    <TextView
+        android:text="Spin the Wheel!"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textStyle="bold"
+        android:textSize="40dp"
+        android:textColor="@color/colorPrimary"
+        android:textAlignment="center"
+        android:id="@+id/spinwheeltextView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
+

@@ -1,10 +1,12 @@
 package com.example.austin.mealwheel_490;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.austin.mealwheel_490.model.Restaurants;
 import com.google.firebase.database.DatabaseReference;
@@ -32,8 +34,7 @@ public class AddRestaurantActivity extends AppCompatActivity {
         addBtn = (Button) findViewById(R.id.addrestaurantBtn);
         homeBtn = (Button) findViewById(R.id.HomeButton);
 
-        addBtn.setOnClickListener(new View.OnClickListener()
-        {
+        addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String newRestaurantName = newRestaurant.getText().toString();
@@ -43,6 +44,9 @@ public class AddRestaurantActivity extends AppCompatActivity {
                 newRestaurant.setText("");
             }
         });
+
+
+
 
 
 

@@ -37,8 +37,8 @@ public class DeleteChoiceListFragment extends Fragment {
 
     List<String> listofrest = new ArrayList<String>();
     ListView restaurantListView;
-    ListAdapter restaurantListAdapter;
-    Firebase itemtoremove;
+    FirebaseListAdapter restaurantListAdapter;
+
 
 
     public DeleteChoiceListFragment() {
@@ -63,6 +63,10 @@ public class DeleteChoiceListFragment extends Fragment {
         restaurantListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+
+                mRestReference = restaurantListAdapter.getRef(i);
+                mRestReference.removeValue();
 
 
             }

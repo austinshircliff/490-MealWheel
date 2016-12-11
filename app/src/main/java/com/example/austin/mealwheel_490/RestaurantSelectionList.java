@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -16,6 +19,8 @@ import com.example.austin.mealwheel_490.model.Restaurants;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +36,17 @@ public class RestaurantSelectionList extends Fragment {
 
     List<String>listofrest = new ArrayList<String>();
     ListView restaurantListView;
-    ListAdapter restaurantListAdapter;
+    FirebaseListAdapter restaurantListAdapter;
+    Button readytogoBtn;
+    TextView option1;
+    TextView option2;
+    TextView option3;
+    TextView option4;
+    TextView option5;
+    TextView option6;
+    CheckBox isSelected;
+
+
 
 
 
@@ -41,16 +56,17 @@ public class RestaurantSelectionList extends Fragment {
     public View onCreateView(LayoutInflater inflater,  ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.restaurant_selection_list_frag,container,false);
         restaurantListView = (ListView) view.findViewById(R.id.restaurantListView);
+        readytogoBtn = (Button) view.findViewById(R.id.readytospinbtn);
+        isSelected = (CheckBox) view.findViewById(R.id.checkbox);
 
         restaurantListAdapter = new FirebaseListAdapter<Restaurants>(getActivity(),Restaurants.class,R.layout.individual_restaurant_name_checkbox,mRestReference) {
             @Override
             protected void populateView(View v, Restaurants model, int position) {
                 TextView restName = (TextView) v.findViewById(R.id.restname);
                 restName.setText(model.getName());
-
-
-
                 listofrest.add(position,model.getName());
+
+
 
             }
         };
@@ -58,17 +74,10 @@ public class RestaurantSelectionList extends Fragment {
         restaurantListView.setAdapter(restaurantListAdapter);
         restaurantListView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         restaurantListView.setItemsCanFocus(false);
-
-
-        restaurantListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getActivity(), "clicked", Toast.LENGTH_SHORT).show();
-
-            }
-        });
         return view;
+
+
+
     }
 
 }
