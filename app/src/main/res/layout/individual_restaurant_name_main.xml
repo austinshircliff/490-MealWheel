@@ -6,12 +6,6 @@
 
 
 
-    <CheckBox
-        android:id="@+id/checkbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:text=""/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -20,8 +14,15 @@
         android:paddingLeft="20dp"
         android:paddingRight="5dp"
         android:paddingTop="20dp"
-        android:textSize="30sp"/>
+        android:textSize="30sp"
+        />
 
-
+<ImageView
+    android:layout_width="25dp"
+    android:layout_height="25dp"
+    android:id="@+id/checkmark"
+    android:visibility="invisible"
+    android:src="@drawable/check"
+    android:padding="5dp"/>
 
 </LinearLayout>

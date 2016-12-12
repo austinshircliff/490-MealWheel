@@ -10,11 +10,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 public class RestaurantSelectionActivity extends AppCompatActivity {
-
+ public static Object thisClass = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant);
+
+
 
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();

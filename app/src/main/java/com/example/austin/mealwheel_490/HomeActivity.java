@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.austin.mealwheel_490.model.Restaurants;
+import com.facebook.AccessToken;
 import com.facebook.FacebookSdk;
 import com.facebook.login.LoginManager;
 
@@ -17,6 +19,13 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
+
+
+        if (AccessToken.getCurrentAccessToken() == null) {
+
+            Button login_logout = (Button) findViewById(R.id.logout);
+            login_logout.setText("Login");
+        }
 
 
         Button logoutBtn = (Button) findViewById(R.id.logout);
@@ -38,32 +47,80 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Button addBtn = (Button)findViewById(R.id.addchoicesbutton);
-        addBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this,AddRestaurantActivity.class);
-                startActivity(intent);
-            }
-        });
+
+
+
+
+
+
+
+            Button addBtn = (Button) findViewById(R.id.addchoicesbutton);
+            addBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    if (AccessToken.getCurrentAccessToken() == null) {
+
+                        Toast.makeText(HomeActivity.this, "Please Login", Toast.LENGTH_SHORT).show();
+                        toLogin();
+
+                    } else if (AccessToken.getCurrentAccessToken() != null)
+                    {
+                        Intent intent = new Intent(HomeActivity.this, AddRestaurantActivity.class);
+                        startActivity(intent);
+
+                    }
+
+
+                }
+            });
+
+
+
+
+
+
         Button pastchoicesBtn = (Button) findViewById(R.id.previouschoicesbutton);
         pastchoicesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this,RestaurantSelectionActivity.class);
-                startActivity(intent);
+
+                if (AccessToken.getCurrentAccessToken() == null) {
+
+                    Toast.makeText(HomeActivity.this, "Please Login", Toast.LENGTH_SHORT).show();
+                    toLogin();
+
+                } else if (AccessToken.getCurrentAccessToken() != null)
+                {
+                    Intent intent = new Intent(HomeActivity.this, RestaurantSelectionActivity.class);
+                    startActivity(intent);
+
+                }
+
             }
         });
+
+
+
 
         Button deletechoiceBtn = (Button) findViewById(R.id.deletebutton);
         deletechoiceBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this,DeleteChoiceActivity.class);
-                startActivity(intent);
+
+
+                if (AccessToken.getCurrentAccessToken() == null) {
+
+                    Toast.makeText(HomeActivity.this, "Please Login", Toast.LENGTH_SHORT).show();
+                    toLogin();
+
+                } else if (AccessToken.getCurrentAccessToken() != null)
+                {
+                    Intent intent = new Intent(HomeActivity.this,DeleteChoiceActivity.class);
+                    startActivity(intent);
+                }
             }
         });
-
     }
 
     public void restart()
@@ -72,10 +129,10 @@ public class HomeActivity extends AppCompatActivity {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
         Toast.makeText(this, "Logged Out", Toast.LENGTH_SHORT).show();
-
-
-
-
-
+    }
+    public void toLogin()
+    {
+        Intent intent = new Intent(HomeActivity.this, FacebookLogin.class);
+        startActivity(intent);
     }
 }
