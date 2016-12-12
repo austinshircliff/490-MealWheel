@@ -25,16 +25,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/playbutton"
-        android:layout_above="@+id/previouschoicesbutton"
+        android:layout_above="@+id/deletebutton"
         android:layout_marginBottom="23dp"
-        android:layout_alignEnd="@+id/previouschoicesbutton"
-        android:layout_alignStart="@+id/previouschoicesbutton" />
+        android:layout_alignEnd="@+id/deletebutton"
+        android:layout_alignStart="@+id/deletebutton" />
 
     <Button
-        android:text="Previous Choices"
+        android:text="Delete Choices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/previouschoicesbutton"
+        android:id="@+id/deletebutton"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
@@ -42,21 +42,13 @@
         android:text="Add Choices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/previouschoicesbutton"
-        android:layout_alignEnd="@+id/previouschoicesbutton"
+        android:layout_below="@+id/deletebutton"
+        android:layout_alignEnd="@+id/deletebutton"
         android:layout_marginTop="17dp"
         android:id="@+id/addchoicesbutton"
-        android:layout_alignStart="@+id/previouschoicesbutton" />
+        android:layout_alignStart="@+id/deletebutton" />
 
-    <Button
-        android:text="Delete Choices"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/addchoicesbutton"
-        android:layout_alignEnd="@+id/previouschoicesbutton"
-        android:layout_marginTop="17dp"
-        android:id="@+id/deletebutton"
-        android:layout_alignStart="@+id/previouschoicesbutton" />
+
 
     <Button
         android:text="Logout"

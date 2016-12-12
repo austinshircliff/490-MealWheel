@@ -47,7 +47,6 @@ public class RestaurantSelectionList extends Fragment {
         View view = inflater.inflate(R.layout.restaurant_selection_list_frag,container,false);
         restaurantListView = (ListView) view.findViewById(R.id.restaurantListView);
         Button readytogoBtn = (Button) view.findViewById(R.id.readytospinbtn);
-        checkmark = (ImageView) view.findViewById(R.id.checkmark);
 
         restaurantListAdapter = new FirebaseListAdapter<Restaurants>(getActivity(),Restaurants.class,R.layout.individual_restaurant_name_main,mRestReference) {
             @Override

@@ -1,6 +1,7 @@
 package com.example.austin.mealwheel_490;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,13 +19,13 @@ import java.util.List;
 import java.util.Random;
 import java.util.Timer;
 
+
 public class SpinnerActivity extends AppCompatActivity {
 
     ImageView arrow;
     Button spinbtn;
     Random spin = new Random();
     int randomspin;
-    Boolean restart = true;
     ArrayList<String> restselected;
     TextView rest1;
     TextView rest2;
@@ -32,10 +33,9 @@ public class SpinnerActivity extends AppCompatActivity {
     TextView rest4;
     TextView rest5;
     TextView rest6;
-    float logspin;
-    String logspin2;
-    String lograndom;
     float randomAngleDegrees;
+    String winningRest;
+
 
 
 
@@ -67,60 +67,58 @@ public class SpinnerActivity extends AppCompatActivity {
                 Spin();
                 Winner();
 
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
 
+                        Intent intent = new Intent(SpinnerActivity.this, ShowWinnerActivity.class);
+                        intent.putExtra("winner",winningRest);
+                        startActivity(intent);
+
+                    }
+                }, 2000);
 
             }
 
+
         });
+
 
     }
 
+
     public void Spin() {
-        if (restart) {
-            randomAngleDegrees = (float) Math.toDegrees(Math.random()*2 * Math.PI);
-//
 
-            arrow.animate().rotation(randomAngleDegrees);
+        randomAngleDegrees = (float) Math.toDegrees(Math.random()*2 * Math.PI) + 80000;
 
 
-            restart = false;
+        arrow.animate().setDuration(2000).rotation(randomAngleDegrees);
 
-
-        } else {
-            randomAngleDegrees = (float) Math.toDegrees(Math.random()*2 *Math.PI) ;
-
-            arrow.animate().rotation(randomAngleDegrees);
-
-            restart = true;
-        }
-
-        logspin = arrow.getRotation();
-        logspin2 = String.valueOf(randomAngleDegrees);
-        Log.d("spin",logspin2);
-        lograndom = String.valueOf(randomspin);
-        Log.d("randomspin",lograndom);
     }
 
     public void Winner()
     {
 
-        if(  (randomAngleDegrees/2) < 30 & (randomAngleDegrees/2) >  0)
-        Toast.makeText(this, rest2.getText(), Toast.LENGTH_SHORT).show();
-        else if((randomAngleDegrees/2) > 31 & (randomAngleDegrees/2) < 60 ){
-            Toast.makeText(this, rest3.getText(), Toast.LENGTH_SHORT).show();
+        if(  (randomAngleDegrees/2) - 40000 < 30 & (randomAngleDegrees/2) -40000 >  0)
+            winningRest = rest2.getText().toString();
+
+        else if((randomAngleDegrees/2)- 40000 > 31 & (randomAngleDegrees/2)- 40000 < 60 ){
+            winningRest = rest3.getText().toString();
         }
-        else if((randomAngleDegrees/2) > 61 & (randomAngleDegrees/2) < 90 ){
-            Toast.makeText(this, rest4.getText(), Toast.LENGTH_SHORT).show();
+        else if((randomAngleDegrees/2) - 40000 > 61 & (randomAngleDegrees/2) - 40000 < 90 ){
+            winningRest = rest4.getText().toString();
         }
-        else if((randomAngleDegrees/2) > 91 & (randomAngleDegrees/2)< 120){
-            Toast.makeText(this, rest5.getText(), Toast.LENGTH_SHORT).show();
+        else if((randomAngleDegrees/2) - 40000 > 91 & (randomAngleDegrees/2) - 40000 < 120){
+            winningRest = rest5.getText().toString();
         }
-        else if((randomAngleDegrees/2) > 121 & (randomAngleDegrees/2) < 150 ){
-            Toast.makeText(this, rest6.getText(), Toast.LENGTH_SHORT).show();
+        else if((randomAngleDegrees/2) - 40000 > 121 & (randomAngleDegrees/2)  - 40000 < 150 ){
+            winningRest = rest6.getText().toString();
         }
-        else if((randomAngleDegrees/2) > 151 ){
-            Toast.makeText(this, rest1.getText(), Toast.LENGTH_SHORT).show();
+        else if((randomAngleDegrees/2) - 40000 > 151 ){
+            winningRest = rest1.getText().toString();
         }
+
+
 
     }
     public void SetChoices()
@@ -191,6 +189,9 @@ public class SpinnerActivity extends AppCompatActivity {
     {
         Intent intent = new Intent(this,HomeActivity.class);
         startActivity(intent);
+
     }
+
+
 }
 

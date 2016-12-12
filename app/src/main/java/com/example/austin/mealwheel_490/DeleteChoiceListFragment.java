@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -30,6 +31,7 @@ public class DeleteChoiceListFragment extends Fragment {
     List<String> listofrest = new ArrayList<String>();
     ListView restaurantListView;
     FirebaseListAdapter restaurantListAdapter;
+    Button hideBtn;
 
 
 
@@ -40,6 +42,9 @@ public class DeleteChoiceListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.restaurant_selection_list_frag, container, false);
         restaurantListView = (ListView) view.findViewById(R.id.restaurantListView);
+        hideBtn = (Button) view.findViewById(R.id.readytospinbtn);
+        hideBtn.setVisibility(View.INVISIBLE);
+
 
         restaurantListAdapter = new FirebaseListAdapter<Restaurants>(getActivity(), Restaurants.class, R.layout.individual_restaurant_name_delete, mRestReference) {
             @Override

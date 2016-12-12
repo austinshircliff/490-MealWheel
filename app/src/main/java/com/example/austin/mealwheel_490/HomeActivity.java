@@ -77,32 +77,6 @@ public class HomeActivity extends AppCompatActivity {
 
 
 
-
-
-
-        Button pastchoicesBtn = (Button) findViewById(R.id.previouschoicesbutton);
-        pastchoicesBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if (AccessToken.getCurrentAccessToken() == null) {
-
-                    Toast.makeText(HomeActivity.this, "Please Login", Toast.LENGTH_SHORT).show();
-                    toLogin();
-
-                } else if (AccessToken.getCurrentAccessToken() != null)
-                {
-                    Intent intent = new Intent(HomeActivity.this, RestaurantSelectionActivity.class);
-                    startActivity(intent);
-
-                }
-
-            }
-        });
-
-
-
-
         Button deletechoiceBtn = (Button) findViewById(R.id.deletebutton);
         deletechoiceBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,7 +102,7 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, FacebookLogin.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
-        Toast.makeText(this, "Logged Out", Toast.LENGTH_SHORT).show();
+       
     }
     public void toLogin()
     {

@@ -34,6 +34,15 @@ public class AddRestaurantActivity extends AppCompatActivity {
         addBtn = (Button) findViewById(R.id.addrestaurantBtn);
         homeBtn = (Button) findViewById(R.id.HomeButton);
 
+        homeBtn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddRestaurantActivity.this,HomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

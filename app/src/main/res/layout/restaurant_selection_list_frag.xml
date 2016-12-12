@@ -17,5 +17,7 @@
         android:layout_gravity="bottom"
         android:text="I'm Ready To Spin the Wheel!"
         android:id="@+id/readytospinbtn"
-        android:textAlignment="center"></Button>
+        android:textAlignment="center">
+
+    </Button>
 </FrameLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_show_winner"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.austin.mealwheel_490.ShowWinnerActivity">
+
+    <TextView
+    android:text="Congratulations!"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/congrats"
+    android:textStyle="bold"
+    android:textSize="40dp"
+    android:textColor="@color/colorPrimary"
+    android:textAlignment="center"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="17dp"/>
+
+    <TextView
+        android:text="You have Chosen..."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/havechosen"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:textColor="@color/colorPrimary"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:layout_below="@+id/congrats"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="Winnergoeshere"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_below="@+id/havechosen"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textSize="35dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/winner"
+        />
+
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Share On Facebook"
+            android:id="@+id/shareonfacebookbutton"
+            android:layout_below="@+id/winner"
+            android:layout_centerHorizontal="true"
+
+            />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Replay Meal Wheel"
+        android:id="@+id/Replay"
+        android:layout_below="@+id/shareonfacebookbutton"
+        android:layout_centerHorizontal="true"
+
+        />
+
+
+
+
+</RelativeLayout>
