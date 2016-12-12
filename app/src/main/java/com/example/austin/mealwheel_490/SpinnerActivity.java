@@ -16,6 +16,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Timer;
 
 public class SpinnerActivity extends AppCompatActivity {
 
@@ -23,7 +24,7 @@ public class SpinnerActivity extends AppCompatActivity {
     Button spinbtn;
     Random spin = new Random();
     int randomspin;
-    Boolean restart = false;
+    Boolean restart = true;
     ArrayList<String> restselected;
     TextView rest1;
     TextView rest2;
@@ -34,6 +35,7 @@ public class SpinnerActivity extends AppCompatActivity {
     float logspin;
     String logspin2;
     String lograndom;
+    float randomAngleDegrees;
 
 
 
@@ -65,6 +67,8 @@ public class SpinnerActivity extends AppCompatActivity {
                 Spin();
                 Winner();
 
+
+
             }
 
         });
@@ -73,25 +77,25 @@ public class SpinnerActivity extends AppCompatActivity {
 
     public void Spin() {
         if (restart) {
-            randomspin = spin.nextInt();
+            randomAngleDegrees = (float) Math.toDegrees(Math.random()*2 * Math.PI);
 //
 
-            arrow.animate().rotation(randomspin);
+            arrow.animate().rotation(randomAngleDegrees);
 
 
             restart = false;
 
 
         } else {
-            randomspin = spin.nextInt();
+            randomAngleDegrees = (float) Math.toDegrees(Math.random()*2 *Math.PI) ;
 
-            arrow.animate().rotation(randomspin);
+            arrow.animate().rotation(randomAngleDegrees);
 
             restart = true;
         }
 
         logspin = arrow.getRotation();
-        logspin2 = String.valueOf(logspin);
+        logspin2 = String.valueOf(randomAngleDegrees);
         Log.d("spin",logspin2);
         lograndom = String.valueOf(randomspin);
         Log.d("randomspin",lograndom);
@@ -100,22 +104,22 @@ public class SpinnerActivity extends AppCompatActivity {
     public void Winner()
     {
 
-        if( arrow.getRotation() <= 60 & arrow.getRotation() >=  0)
-        Toast.makeText(this, rest1.getText(), Toast.LENGTH_SHORT).show();
-        else if(arrow.getRotation() > 61 & arrow.getRotation() <= 120 ){
-            Toast.makeText(this, rest2.getText(), Toast.LENGTH_SHORT).show();
-        }
-        else if(arrow.getRotation() > 121 & arrow.getRotation() <= 180 ){
+        if(  (randomAngleDegrees/2) < 30 & (randomAngleDegrees/2) >  0)
+        Toast.makeText(this, rest2.getText(), Toast.LENGTH_SHORT).show();
+        else if((randomAngleDegrees/2) > 31 & (randomAngleDegrees/2) < 60 ){
             Toast.makeText(this, rest3.getText(), Toast.LENGTH_SHORT).show();
         }
-        else if(arrow.getRotation() > 181 & arrow.getRotation() <= 240){
+        else if((randomAngleDegrees/2) > 61 & (randomAngleDegrees/2) < 90 ){
             Toast.makeText(this, rest4.getText(), Toast.LENGTH_SHORT).show();
         }
-        else if(arrow.getRotation() > 241 & arrow.getRotation() <= 300 ){
+        else if((randomAngleDegrees/2) > 91 & (randomAngleDegrees/2)< 120){
             Toast.makeText(this, rest5.getText(), Toast.LENGTH_SHORT).show();
         }
-        else if(arrow.getRotation() > 301 ){
+        else if((randomAngleDegrees/2) > 121 & (randomAngleDegrees/2) < 150 ){
             Toast.makeText(this, rest6.getText(), Toast.LENGTH_SHORT).show();
+        }
+        else if((randomAngleDegrees/2) > 151 ){
+            Toast.makeText(this, rest1.getText(), Toast.LENGTH_SHORT).show();
         }
 
     }
